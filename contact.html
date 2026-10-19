@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="contactUsTitle">Contact Us - Gov Schemes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .contact-info {
+            display: grid;
+            gap: 2rem;
+        }
+        .info-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+        .info-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .info-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .info-text {
+            color: var(--text-secondary);
+        }
+        .faq-section {
+            margin-top: 4rem;
+        }
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: var(--accent-primary);
+        }
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            line-height: 1.6;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <span class="logo-icon">🏛️</span>
+                <span class="logo-text">GovSchemes</span>
+            </div>
+            <div class="nav-links">
+                <a href="user-dashboard.jsp" class="nav-link" data-translate="dashboard">Dashboard</a>
+                <a href="about.html" class="nav-link" data-translate="about">About Us</a>
+                <a href="contact.html" class="nav-link active" data-translate="contact">Contact</a>
+                <button class="btn btn-secondary" id="logoutBtn" style="display: none;" data-translate="logout">Logout</button>
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="contact-section">
+        <div class="section-header animate-slide-up">
+            <h1 class="section-title" data-translate="contactUs">Contact Us</h1>
+            <p class="section-subtitle" data-translate="contactSubtitle">We're here to help and answer any questions you might have</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="animate-fade-in">
+                <div class="form-container" style="margin: 0;">
+                    <h2 style="margin-bottom: 1.5rem;" data-translate="sendMessage">Send us a Message</h2>
+                    <div id="alertContainer"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" data-translate="name">Name</label>
+                            <input type="text" id="name" class="form-input" required data-translate-placeholder="namePlaceholder">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="email">Email</label>
+                            <input type="email" id="email" class="form-input" required data-translate-placeholder="emailPlaceholder">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="subject">Subject</label>
+                            <input type="text" id="subject" class="form-input" required data-translate-placeholder="subjectPlaceholder">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-translate="message">Message</label>
+                            <textarea id="message" class="form-textarea" required data-translate-placeholder="messagePlaceholder"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span data-translate="submit">Submit</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-info animate-fade-in delay-1">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <div class="info-title" data-translate="emailUs">Email Us</div>
+                    <p class="info-text">support@govschemes.in</p>
+                    <p class="info-text">info@govschemes.in</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <div class="info-title" data-translate="callUs">Call Us</div>
+                    <p class="info-text" data-translate="tollFree">Toll Free: 1800-XXX-XXXX</p>
+                    <p class="info-text" data-translate="workingHours">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-title" data-translate="visitUs">Visit Us</div>
+                    <p class="info-text" data-translate="officeLocation">Government Office Complex</p>
+                    <p class="info-text" data-translate="officeAddress">New Delhi - 110001, India</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section animate-fade-in delay-2">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="faqs">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq1Q">How do I register on the platform?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq1A">
+                    Click on the "Register" button in the navigation menu, fill in your details including name, email, password, address, and district, select your user type (Common User or Admin), and submit the form. You'll be able to login immediately after registration.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq2Q">How can I search for schemes?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq2A">
+                    After logging in to your dashboard, you'll find a search bar at the top. You can search for schemes by name, address, or description. The results will be filtered in real-time as you type.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq3Q">What is the difference between User and Admin accounts?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq3A">
+                    Common Users can browse, search, and view scheme details. Admins have additional privileges to add new schemes, upload scheme images, and delete existing schemes from the platform.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq4Q">How do I change the language?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq4A">
+                    Use the language dropdown selector in the top navigation bar. We support 5 languages: English, Hindi, Tamil, Telugu, and Bengali. Your language preference will be saved automatically.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq5Q">How can I share a scheme with others?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq5A">
+                    Each scheme card has a "Share" button. Click it to use your device's native share functionality. If sharing isn't available, the link will be copied to your clipboard automatically.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span data-translate="faq6Q">Is my data secure?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer" data-translate="faq6A">
+                    Yes, all your data is stored securely in your browser's local storage. We do not transmit your personal information to any external servers. Your password is stored securely and never displayed in plain text.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GovSchemes</h3>
+                    <p data-translate="footerText">Your trusted portal for government welfare schemes and programs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="quickLinks">Quick Links</h4>
+                    <a href="index.html" data-translate="home">Home</a>
+                    <a href="about.jsp" data-translate="about">About Us</a>
+                    <a href="contact.jsp" data-translate="contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="support">Support</h4>
+                    <a href="contact.jsp" data-translate="help">Help Center</a>
+                    <a href="contact.jsp" data-translate="faq">FAQs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GovSchemes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="utils.js"></script>
+    <script src="contact.js"></script>
+    <script>
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
+
+        // Live language switching
+        document.getElementById("languageSelect").addEventListener("change", function(){
+            const lang = this.value;
+            document.querySelectorAll("[data-translate]").forEach(el => {
+                const key = el.getAttribute("data-translate");
+                if(translations[lang] && translations[lang][key]){
+                    el.innerText = translations[lang][key];
+                }
+            });
+            document.querySelectorAll("[data-translate-placeholder]").forEach(el => {
+                const key = el.getAttribute("data-translate-placeholder");
+                if(translations[lang] && translations[lang][key]){
+                    el.placeholder = translations[lang][key];
+                }
+            });
+        });
+    </script>
+</body>
+</html>

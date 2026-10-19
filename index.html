@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="pageTitle">Gov Schemes - Home</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏛️</span>
+                <span class="logo-text" data-translate="logoText">GovSchemes</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active" data-translate="home">Home</a>
+                <div class="auth-buttons">
+                    <a href="login.jsp" class="btn btn-secondary" data-translate="login">Login</a>
+                    <a href="register.jsp" class="btn btn-primary" data-translate="register">Register</a>
+                </div>
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-slide-up" data-translate="heroTitle">Empowering Citizens Through Government Schemes</h1>
+            <p class="hero-subtitle animate-slide-up delay-1" data-translate="heroSubtitle">Discover and access government welfare programs designed for your benefit</p>
+            <div class="hero-buttons animate-slide-up delay-2">
+                <a href="register.jsp" class="btn btn-primary btn-large" data-translate="getStarted">Get Started</a>
+                <a href="#schemes" class="btn btn-secondary btn-large" data-translate="browseSchemes">Browse Schemes</a>
+            </div>
+        </div>
+        <div class="hero-pattern"></div>
+    </header>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card animate-fade-in">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number" id="totalSchemes">0</div>
+                    <div class="stat-label" data-translate="totalSchemes">Total Schemes</div>
+                </div>
+                <div class="stat-card animate-fade-in delay-1">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-number" id="activeSchemes">0</div>
+                    <div class="stat-label" data-translate="activeSchemes">Active Schemes</div>
+                </div>
+                <div class="stat-card animate-fade-in delay-2">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number" id="totalUsers">0</div>
+                    <div class="stat-label" data-translate="beneficiaries">Registered Users</div>
+                </div>
+                <div class="stat-card animate-fade-in delay-3">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number" id="upcomingSchemes">0</div>
+                    <div class="stat-label" data-translate="upcoming">Upcoming Schemes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schemes-section" id="schemes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="upcomingSchemes">Upcoming Schemes</h2>
+                <p class="section-subtitle" data-translate="exploreSchemes">Explore the latest government welfare programs</p>
+            </div>
+            <div class="schemes-grid" id="schemesGrid">
+                <!-- Schemes will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="logoText">GovSchemes</h3>
+                    <p data-translate="footerText">Your trusted portal for government welfare schemes and programs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="quickLinks">Quick Links</h4>
+                    <a href="index.html" data-translate="home">Home</a>
+                    <a href="about.html" data-translate="aboutUs">About Us</a>
+                    <a href="contact.html" data-translate="contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="support">Support</h4>
+                    <a href="contact.html" data-translate="helpCenter">Help Center</a>
+                    <a href="contact.html" data-translate="faq">FAQs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GovSchemes. <span data-translate="allRightsReserved">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

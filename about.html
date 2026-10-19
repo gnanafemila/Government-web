@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="aboutPageTitle">About Us - Gov Schemes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Your existing styles remain unchanged */
+        .about-section { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
+        .about-header { text-align: center; margin-bottom: 4rem; }
+        .about-content { display: grid; gap: 3rem; }
+        .about-card { background: var(--bg-secondary); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .about-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2); }
+        .about-card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--accent-primary); }
+        .about-card p { color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .value-card { background: var(--bg-tertiary); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .value-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+        .value-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .value-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .value-description { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <span class="logo-icon">🏛️</span>
+                <span class="logo-text" data-translate="govSchemes">GovSchemes</span>
+            </div>
+            <div class="nav-links">
+                <a href="user-dashboard.jsp" class="nav-link" data-translate="dashboard">Dashboard</a>
+                <a href="about.html" class="nav-link active" data-translate="aboutUs">About Us</a>
+                <a href="contact.html" class="nav-link" data-translate="contact">Contact</a>
+                <button class="btn btn-secondary" id="logoutBtn" style="display: none;" data-translate="logout">Logout</button>
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="about-section">
+        <div class="about-header animate-slide-up">
+            <h1 class="section-title" data-translate="aboutUs">About Us</h1>
+            <p class="section-subtitle" data-translate="aboutSubtitle">Connecting Citizens with Government Benefits</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-card animate-fade-in">
+                <h3 data-translate="ourMission">Our Mission</h3>
+                <p data-translate="missionText">
+                    At GovSchemes, our mission is to bridge the gap between government welfare programs and the citizens who need them most. We strive to make information about government schemes easily accessible, transparent, and user-friendly for everyone across India.
+                </p>
+            </div>
+
+            <div class="about-card animate-fade-in delay-1">
+                <h3 data-translate="ourStory">Our Story</h3>
+                <p data-translate="storyText">
+                    Founded with a vision to empower citizens through information, GovSchemes was created to address the challenge of discovering and understanding government welfare programs. We believe that every citizen deserves easy access to the benefits and schemes designed for their welfare. Our platform simplifies this process by bringing all schemes under one roof, making it easier for you to find, understand, and apply for programs that can change your life.
+                </p>
+            </div>
+
+            <div class="about-card animate-fade-in delay-2">
+                <h3 data-translate="ourValues">Our Values</h3>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-title" data-translate="transparency">Transparency</div>
+                        <p class="value-description" data-translate="transparencyText">Clear and honest information about every scheme</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-title" data-translate="accessibility">Accessibility</div>
+                        <p class="value-description" data-translate="accessibilityText">Easy access for all citizens regardless of background</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <div class="value-title" data-translate="empowerment">Empowerment</div>
+                        <p class="value-description" data-translate="empowermentText">Enabling citizens to make informed decisions</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌟</div>
+                        <div class="value-title" data-translate="excellence">Excellence</div>
+                        <p class="value-description" data-translate="excellenceText">Committed to providing the best user experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card animate-fade-in delay-3">
+                <h3 data-translate="whatWeOffer">What We Offer</h3>
+                <p data-translate="offerText">
+                    • Comprehensive database of government schemes<br>
+                    • Real-time updates on scheme availability and deadlines<br>
+                    • Multi-language support for wider accessibility<br>
+                    • Easy-to-use search and filter functionality<br>
+                    • Detailed information about eligibility and application process<br>
+                    • Secure platform for managing your scheme applications
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-translate="govSchemes">GovSchemes</h3>
+                    <p data-translate="footerText">Your trusted portal for government welfare schemes and programs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="quickLinks">Quick Links</h4>
+                    <a href="index.html" data-translate="home">Home</a>
+                    <a href="about.jsp" data-translate="aboutUs">About Us</a>
+                    <a href="contact.jsp" data-translate="contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="support">Support</h4>
+                    <a href="contact.jsp" data-translate="helpCenter">Help Center</a>
+                    <a href="contact.jsp" data-translate="faqs">FAQs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GovSchemes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+</body>
+</html>
